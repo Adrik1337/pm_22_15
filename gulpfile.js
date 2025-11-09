@@ -40,7 +40,7 @@ function imgTask() {
 function serve() {
     browserSync.init( { server: { baseDir: 'dist' } });
     watch('app/html/**/*.html', htmlTask).on('change', browserSync.reload);
-    watch('app/scss/**/*.scss', scssTask);
+    watch('app/scss/**/*.scss', scssTask).on('change', browserSync.reload);
     watch('app/js/**/*.js', jsTask).on('change', browserSync.reload);
     watch('app/img/**/*', imgTask).on('change', browserSync.reload);
     watch('app/index.html', indexTask).on('change', browserSync.reload);

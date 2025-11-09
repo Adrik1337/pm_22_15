@@ -1,64 +1,62 @@
-body p {
-    font-size: 1.5rem;
-}
 .cv-container {
-    max-width: 900px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+  max-width: 1000px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
 }
+
 .sidebar {
-    background-color: #f8f9fa;
-    padding: 30px 20px;
-    margin-right: 100px;
+  background-color: #f8f9fa;
+  padding: 30px 25px;
 }
+
 .main-content {
-    padding: 30px 40px;
+  padding: 30px 40px;
+  background-color: #fff;
 }
+
 .section-title {
-    display: inline-block;
-    padding-right: 50px;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    padding-bottom: 5px;
-    border-bottom: 2px solid #343a40;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #343a40;
+  padding-bottom: 5px;
+  color: #343a40;
 }
-.abt {
-    color: #343a40;
-    background-color: #fff;
-    display: inline-block;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.sct {
-    margin-bottom: 8em !important;
-    margin-top: 2em !important;
-}
-.section-title.contact-title {
-    border-bottom: none !important;
-    padding-right: 50px !important;
-}
-.contact-item, .reference-item {
-    margin-bottom: 10px;
-}
-.skill-bar-container {
-    margin-bottom: 15px;
-}
-.progress-bar-custom {
-     background-color: #343a40 !important;
-}
-.header-section {
-    background-color: #343a40;
-    color: white;
-    padding: 20px;
-    margin-bottom: 30px;
-    padding-left: 1rem !important;
-}
+
 .header-image {
-    height: 600px;
-    background-color: #ccc;
-    background-size: cover;
-    background-position: center;
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.about-section {
+  background-color: #343a40;
+  border-radius: 4px;
+}
+
+.progress {
+  background-color: #e9ecef;
+  border-radius: 4px;
+}
+
+.progress-bar {
+  background-color: #343a40;
+}
+
+@media (max-width: 768px) {
+  .cv-container {
+    margin: 20px;
+  }
+  .sidebar {
+    text-align: center;
+  }
+  .main-content {
+    padding: 20px;
+  }
+  .header-image {
+    height: 200px;
+  }
 }

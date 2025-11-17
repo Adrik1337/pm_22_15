@@ -1,62 +1,100 @@
 .cv-container {
   max-width: 1000px;
   margin: 50px auto;
-  background: #fff;
+  background: #ffffff;
   border-radius: 8px;
-  overflow: hidden;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar {
-  background-color: #f8f9fa;
-  padding: 30px 25px;
+  background-color: #ffffff;
+  padding: 30px 10px 0px 50px;
 }
 
 .main-content {
-  padding: 30px 40px;
-  background-color: #fff;
+  background-color: #ffffff;
+  padding: 0px 0px 30px 80px;
 }
 
 .section-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #343a40;
-  padding-bottom: 5px;
-  color: #343a40;
+  font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    padding: 3px 40px 3px 15px;
+    background-color: #161718;
+    color: #ffffff;
+    border-bottom: none;
+    display: inline-block;
+}
+
+.section-second {
+  font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    padding: 3px 40px 3px 15px;
+    background-color: #161718;
+    color: #ffffff;
+    border-bottom: none;
+    display: inline-block;
 }
 
 .header-image {
-  height: 280px;
+  height: 400px;
   background-size: cover;
   background-position: center;
 }
 
 .about-section {
-  background-color: #343a40;
-  border-radius: 4px;
+  height: 250px;
+  background-color: #161718;
+  border-radius: 0px;
+}
+
+.about-title-box {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 3px 12px 3px 12px;
+    background-color: #fff;
+    color: #121314;
+    display: inline-block;
+    border-radius: none;
 }
 
 .progress {
-  background-color: #e9ecef;
-  border-radius: 4px;
+  background-color: #c9c9c9;
+  border-radius: none;
+  margin-right: 200px;
 }
 
 .progress-bar {
-  background-color: #343a40;
+  background-color: #000000;
 }
 
-@media (max-width: 768px) {
-  .cv-container {
-    margin: 20px;
-  }
-  .sidebar {
-    text-align: center;
-  }
-  .main-content {
-    padding: 20px;
-  }
-  .header-image {
-    height: 200px;
-  }
+.cv-name-first {
+    font-size: 4.5rem; 
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: #000000;
+}
+
+.cv-name-last {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.cv-title {
+    font-size: 2.3rem;
+    font-weight: 600; 
+    color: #000000;
+    margin-top: 5px;
+}
+.main-content-wrapper {
+    padding-right: 100px;
 }

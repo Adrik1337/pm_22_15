@@ -1,0 +1,11 @@
+@use 'variables';
+
+@mixin section-title-base {
+  font-size: 1.3rem;
+    margin-top: variables.$margin-section-top;
+    margin-bottom: 30px;
+    padding: variables.$padding-title-v 30px variables.$padding-title-v 15px;
+    background-color: variables.$color-primary;
+    color: variables.$color-secondary;
+    border-bottom: 0;
+}

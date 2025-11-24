@@ -1,0 +1,28 @@
+@use 'variables';
+.about-section {
+  height: 200px;
+  padding: 30px;
+  background-color: #161718;
+}
+.about-title-box {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 0px 10px 0px 10px;
+    background-color:#ffffff;
+    color: #161718;
+    display: inline-block;
+    border-radius: none;
+}
+%progress-base {
+    margin-left: 15px;
+    border-radius: 0;
+    background-color: #dbdbdb;
+}
+.progress {
+  @extend %progress-base;
+  margin-right: 170px;
+}
+
+.progress-bar {
+  background-color:#000000;
+}

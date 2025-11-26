@@ -1,7 +1,9 @@
-@use '../components/main/variables.scss' as variables;
-@use '../components/main/base.scss' as base;
-@use '../components/main/header.scss' as header;
-@use '../components/main/leftbar.scss' as leftbar;
-@use '../components/main/rightbar.scss' as rightbar;
-@use '../components/main/modules.scss' as modules;
-@use '../components/main/mixins.scss' as mixins;
+$color-primary: #161718;
+$color-secondary: #ffffff;
+$margin-section-top: 50px;
+$padding-title-v: 3px;
+@import "../components/main/base.scss";
+@import "../components/main/header.scss";
+@import "../components/sidebar/leftbar.scss";
+@import "../components/sidebar/rightbar.scss";
+@import "../components/main/modules.scss";

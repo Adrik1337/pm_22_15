@@ -25,7 +25,8 @@ function scssTask() {
 // JS
 function jsTask() {
     return src('app/js/**/*.js')
-        .pipe(dest('dist/js'));
+        .pipe(dest('dist/js'))
+        .pipe(browserSync.stream());
 }
 
 // Images
@@ -38,7 +39,7 @@ function imgTask() {
 function serve() {
     browserSync.init( { server: { baseDir: 'dist' } });
     watch('app/*.html', htmlTask).on('change', browserSync.reload);
-    watch('app/scss/**/*.scss', scssTask);
+    watch('app/scss/*.scss', scssTask);
     watch('app/components/**/*.scss', scssTask);
     watch('app/js/**/*.js', jsTask).on('change', browserSync.reload);
     watch('app/img/**/*', imgTask).on('change', browserSync.reload);

@@ -3,11 +3,13 @@ const sass = require('gulp-sass')(require('sass'));
 const cssnano = require ('gulp-cssnano');
 const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
+const fileInclude = require('gulp-file-include');
 const rename = require('gulp-rename');
 
 // HTML
 function htmlTask() {
     return src('app/*.html')
+        .pipe(fileInclude({ prefix: '@@', basepath: '@file' }))
         .pipe(dest('dist'))
         .pipe(browserSync.stream());
 }
@@ -38,7 +40,7 @@ function imgTask() {
 // Reloading
 function serve() {
     browserSync.init( { server: { baseDir: 'dist' } });
-    watch('app/*.html', htmlTask).on('change', browserSync.reload);
+    watch('app/components/**/*.html', htmlTask).on('change', browserSync.reload);
     watch('app/scss/*.scss', scssTask);
     watch('app/components/**/*.scss', scssTask);
     watch('app/js/**/*.js', jsTask).on('change', browserSync.reload);

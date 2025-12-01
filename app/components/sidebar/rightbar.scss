@@ -1,0 +1,21 @@
+@mixin section-title-base {
+  font-size: 1.3rem;
+    margin-top: $margin-section-top;
+    margin-bottom: 30px;
+    padding: $padding-title-v 30px $padding-title-v 15px;
+    background-color: $color-primary;
+    color: $color-secondary;
+    border-bottom: 0;
+}
+.main-content {
+  background-color: #ffffff;
+  padding: 0px 0px 40px 90px;
+}
+$width-l: 160px;
+.section-title-r {
+    @include section-title-base;
+    width: $width-l + 40px; 
+}
+ .main-content-wrapper {
+    padding-right: 50px;
+}

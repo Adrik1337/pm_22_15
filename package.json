@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "bootstrap": "^5.3.8",
+>>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
     "sass": "^1.92.1"
   },
   "devDependencies": {

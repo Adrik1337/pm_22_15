@@ -1,7 +1,8 @@
 @use "base";
+@use "interactive";
 
 // Left side
-@use "../components/main/header.scss";
+@use "../components/sidebar/header";
 
 // Right side
 @use "../components/main/about.scss";

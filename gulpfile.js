@@ -58,6 +58,7 @@ const scssTask = () => {
         .pipe(dest(paths.styles.dest))
         .pipe(browserSync.stream());
 }
+
 const jsTask = () =>  {
     return src(paths.scripts.src)
         .pipe(dest(paths.scripts.dest))

@@ -25,7 +25,7 @@ body {
   width: 160px;
 }
 
-$width-l: 160px;
+$width-l: 180px;
 .section-title-r {
   @include section-title-base;
   width: $width-l + 40px;

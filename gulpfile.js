@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-const { src, dest, watch, series, parallel } = require('gulp');
-=======
-const { src, dest, watch, parallel,} = require('gulp');
->>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
+const { src, dest, watch, series } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const cssnano = require('gulp-cssnano');
 const browserSync = require('browser-sync').create();
@@ -10,132 +6,90 @@ const imagemin = require('gulp-imagemin');
 const fileInclude = require('gulp-file-include');
 const rename = require('gulp-rename');
 
-<<<<<<< HEAD
 const paths = {
     html: {
         src: 'app/*.html',
         dest: 'dist',
-        },
+        watch: 'app/**/*.html' // Додано
+    },
     styles: {
         src: 'app/scss/style.scss',
         dest: 'dist/css',
+        watch: 'app/scss/**/*.scss'
     },
     scripts: {
         src: 'app/js/**/*.js',
         dest: 'dist/js',
+        watch: 'app/js/**/*.js'
     },
     images: {
         src: 'app/img/**/*',
         dest: 'dist/img',
+        watch: 'app/img/**/*'
     },
-        bootstrap: {
+    bootstrap: {
         css: 'node_modules/bootstrap/dist/css/bootstrap.min.css',
         js: 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
     }
 };
 
-
-const bootstrapCSS = (done) =>  {
+const bootstrapCSS = () =>  {
     return src(paths.bootstrap.css)
         .pipe(dest(paths.styles.dest));
 }
 
-const bootstrapJS = (done) =>  {
+const bootstrapJS = () =>  {
     return src(paths.bootstrap.js)
         .pipe(dest(paths.scripts.dest));
 }
 
-const htmlTask = (done) =>  {
+const htmlTask = () =>  {
     return src(paths.html.src)
         .pipe(fileInclude({ prefix: '@@', basepath: '@file' }))
         .pipe(dest(paths.html.dest))
         .pipe(browserSync.stream());
 }
 
-const scssTask = (done) =>  {
+const scssTask = () => {
     return src(paths.styles.src)
         .pipe(sass().on('error', sass.logError))
         .pipe(cssnano())
         .pipe(rename('index.min.css'))
         .pipe(dest(paths.styles.dest))
-=======
-// HTML
-function htmlTask() {
-    return src('app/*.html')
-        .pipe(fileInclude({ prefix: '@@', basepath: '@file' }))
-        .pipe(dest('dist'))
         .pipe(browserSync.stream());
 }
-
-// SCSS
-function scssTask() {
-    return src('app/scss/style.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(cssnano())
-        .pipe(rename('index.min.css'))
-        .pipe(dest('dist/css'))
-        .pipe(browserSync.stream());
-}
-
-// JS
-function jsTask() {
-    return src('app/js/**/*.js')
-        .pipe(dest('dist/js'))
->>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
-        .pipe(browserSync.stream());
-}
-
-const jsTask = (done) =>  {
+const jsTask = () =>  {
     return src(paths.scripts.src)
         .pipe(dest(paths.scripts.dest))
         .pipe(browserSync.stream());
 }
 
-const imgTask = (done) =>  {
+const imgTask = () =>  {
     return src(paths.images.src, { encoding: false })
         .pipe(imagemin())
-<<<<<<< HEAD
         .pipe(dest(paths.images.dest))
         .pipe(browserSync.stream());
 }
 
+const reload = (done) => {
+    browserSync.reload();
+    done();
+}
 
 const serve = (done) =>  {
     browserSync.init({
         server: { baseDir: 'dist' }
     });
+    done();
 }
 
-const watcher = (done) => {
-    watch(paths.html.watch, htmlTask);
-    watch(paths.styles.watch, scssTask);
-    watch(paths.scripts.watch, jsTask);
-    watch(paths.images.watch, imgTask);
+const watcher = () => {
+    watch(paths.html.watch, series(htmlTask, reload));
+    watch(paths.styles.watch, series(scssTask, reload));
+    watch(paths.scripts.watch, series(jsTask, reload));
+    watch(paths.images.watch, series(imgTask, reload));
 }
 
+const build = series( bootstrapCSS, bootstrapJS, htmlTask, scssTask, jsTask, imgTask );
 
-const build = series(
-    bootstrapCSS, 
-    bootstrapJS, 
-    htmlTask, 
-    scssTask, 
-    jsTask, 
-    imgTask
-);
-
-exports.default = series(build, serve, watcher);
-=======
-        .pipe(dest('dist/img'));
-}
-// Reloading
-function serve() {
-    browserSync.init( { server: { baseDir: 'dist' } });
-    watch('app/components/**/*.html', htmlTask).on('change', browserSync.reload);
-    watch('app/scss/*.scss', scssTask);
-    watch('app/components/**/*.scss', scssTask);
-    watch('app/js/**/*.js', jsTask).on('change', browserSync.reload);
-    watch('app/img/**/*', imgTask).on('change', browserSync.reload);
-}
-
-exports.default = parallel(htmlTask, scssTask, jsTask, imgTask, serve);
->>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
+exports.default = series( build, serve, watcher );

@@ -1,47 +1,42 @@
-<<<<<<< HEAD
 .cv-color-primary {
     color: #000000;
 }
 
 .cv-name-first {
     @extend .cv-color-primary;
-=======
+}
+
 .cv-name-first {
->>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
-    font-size: 4.5rem; 
+    font-size: 4.5rem;
     font-weight: 500;
     line-height: 1.1;
     margin-top: 0px;
     margin-bottom: 0px;
-<<<<<<< HEAD
-
 }
+
 .cv-name-last {
     @extend .cv-color-primary;
-=======
     color: #000000;
 }
+
 .cv-name-last {
->>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
     font-size: 4.5rem;
     font-weight: 900;
     line-height: 1.1;
     margin-top: 0;
     margin-bottom: 0px;
-<<<<<<< HEAD
 }
+
 .cv-title {
     @extend .cv-color-primary;
     font-size: 2rem;
     font-weight: 600; 
-=======
     color: #000000;
 }
 .cv-title {
     font-size: 2rem;
     font-weight: 600; 
     color: #000000;
->>>>>>> 576197f8f2b655cbf613c40dce67735800590f69
     margin-top: 5px;
     margin-bottom: 90px;
 }

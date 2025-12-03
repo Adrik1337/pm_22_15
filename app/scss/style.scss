@@ -1,0 +1,9 @@
+@use "base";
+
+// Left side
+@use "../components/main/header.scss";
+
+// Right side
+@use "../components/main/about.scss";
+@use "../components/main/skills.scss";
+@use "../components/main/experience.scss";

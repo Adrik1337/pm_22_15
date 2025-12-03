@@ -1,0 +1,47 @@
+.cv-color-primary {
+    color: #000000;
+}
+
+.cv-name-first {
+    @extend .cv-color-primary;
+}
+
+.cv-name-first {
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.cv-name-last {
+    @extend .cv-color-primary;
+    color: #000000;
+}
+
+.cv-name-last {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+.cv-title {
+    @extend .cv-color-primary;
+    font-size: 2rem;
+    font-weight: 600; 
+    color: #000000;
+}
+.cv-title {
+    font-size: 2rem;
+    font-weight: 600; 
+    color: #000000;
+    margin-top: 5px;
+    margin-bottom: 90px;
+}
+.header-image {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}

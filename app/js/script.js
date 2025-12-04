@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const data = await response.json();
 
+            console.log(data);
+
             // Passing the loaded data to the display function
             initPage(data);
 
